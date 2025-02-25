@@ -39,10 +39,19 @@ def main():
         screen.fill("black")
         
         updateable.update(dt)
+        
+        # Player Collision
         for i in asteroids:
             if player.is_colliding(i):
                 print("Game over!")
                 exit()
+        
+        # Asteroid/Bullet Collision
+        for i in asteroids:
+            for shot in shots:
+                if i.is_colliding(shot):
+                    i.kill()
+                    shot.kill()
 
         for i in drawable:
             i.draw(screen)
