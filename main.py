@@ -15,7 +15,7 @@ def main():
 
     Player.containers        = (updateable, drawable)
     Asteroid.containers      = (asteroids, updateable, drawable)
-    AsteroidField.containers = (updateable)
+    AsteroidField.containers = (updateable,)
 
     dt = 0  
     clock = pygame.time.Clock()
