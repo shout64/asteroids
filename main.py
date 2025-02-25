@@ -36,13 +36,16 @@ def main():
         screen.fill("black")
         
         updateable.update(dt)
+        for i in asteroids:
+            if player.is_colliding(i):
+                print("Game over!")
+                exit()
+
         for i in drawable:
             i.draw(screen)
 
         pygame.display.flip()
         dt = clock.tick(60)/1000
-        # dt = x / 1000
-
 
 if __name__ == "__main__":
     main()
